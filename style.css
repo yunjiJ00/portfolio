@@ -1,0 +1,132 @@
+body{
+  margin: 0;
+}
+.container {
+  background-color: #2f2f2f;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+  height: 2vh;
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+  top: 0;
+}
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1;
+}
+.name {
+  text-align: center;
+  color: black;
+  font-size: 30px;
+  padding: 20px 0;
+}
+.line {
+  width: 100%;
+  border: 1px solid #e7e7e7;
+}
+.menu {
+  display: flex;
+  justify-content: center;
+}
+.item {
+  margin: 0 10px;
+  padding: 10px 0;
+  cursor: pointer;
+}
+.first-section {
+  text-align: center;
+  padding-top: 150px;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.first-section .content {
+  align-items: left;
+  display: flex;
+  justify-content: center;
+}
+.first-section .first-left-side {
+  float: right;
+  width: 40%
+  margin-right: 30px;
+  flex-direction: row-reverse;
+}
+.first-section .first-left-side img {
+  height: 385px;
+  width: auto;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+.first-section .first-right-side {
+  float: right;
+  width: 60%
+  text-align: left;
+}
+.section {
+  text-align: center;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.section .content {
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.section .content .text {
+  text-align: justify;
+}
+.section .content .table {
+  text-align: left;
+  margin: 0 auto;
+}
+.right-side {
+  text-align: left;
+}
+.skill-container {
+  background-color: #bab5b5;
+  padding: 0 20px;
+  width: 80%;
+  box-sizing: border-box;
+  height: auto;
+  top: 0;
+  .skill-list {
+    margin: 0 auto;
+    width: 100%;
+    li {
+      position: relative;
+      margin-bottom: 32px;
+      padding-left: 6px;
+      .bar-container, .bar {  
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 3px;  
+        border-radius: 15px;
+        content: "";
+      }
+      .skill-name {
+        position: absolute;
+        left: 0;
+        top: -20px; /* 바 위에 위치하도록 설정합니다 */
+      }
+      .bar-container {
+        width: 100%;
+        background-color: #333;
+        
+        .bar {
+          top: 0;
+        }
+        .pct {
+          position: absolute;
+          top: -19px;
+          right: 0;
+          opacity: 0;
+          transition: opacity 0.3s linear;
+        }
+      }
+    }   
+  }
+}
