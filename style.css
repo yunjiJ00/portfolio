@@ -286,3 +286,19 @@ ul {
 li {
   margin-bottom: 5px;
 }
+@media (max-width: 768px) {
+  .first-section {
+    padding-top: 180px; /* 모바일에서 패딩 조정 */
+  }
+
+  .first-section .content {
+    flex-direction: column; /* 모바일에서 세로 정렬 */
+    align-items: center; /* 중앙 정렬 */
+  }
+
+  .first-section .first-left-side,
+  .first-section .first-right-side {
+    width: 100%; /* 모바일에서 전체 너비 사용 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+  }
+}
