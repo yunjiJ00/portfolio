@@ -1,3 +1,10 @@
+:root {
+  --color-dark-purple: #ffffff;
+  --color-white: #000000;
+  --color-yellow: #5da4de;
+  --font-large: 2rem;
+  --animation-duration: 0.3s;
+}
 body{
   margin: 0;
   font-family: 'Montserrat', sans-serif;
@@ -41,37 +48,41 @@ body{
   padding: 10px 0;
   cursor: pointer;
 }
+.title-text {
+  text-align: justify;
+}
 .first-section {
   text-align: center;
   padding-top: 150px;
   padding-left: 5%;
   padding-right: 5%;
+  padding-bottom: 5%;
 }
 .first-section .content {
-  align-items: left;
   display: flex;
-  align-items: right;
-  align-content: right;
+  flex-wrap: wrap; /* 모바일 대응을 위해 flex-wrap 추가 */
+  justify-content: center; /* 중앙 정렬을 위해 추가 */
+  gap: 20px; /* 이미지와 글 사이의 간격 설정 */
 }
+
 .first-section .first-left-side {
-  float: right;
-  width: 50%;
-  margin-right: 20px;
-  flex-direction: row-reverse;
-  align-items: right;
-  align-content: right;
+  flex: 1 1 300px; /* 최소 너비 300px 설정 */
+  display: flex;
+  justify-content: center; /* 이미지 중앙 정렬 */
 }
+
 .first-section .first-left-side img {
-  height: 385px;
-  width: auto;
+  max-width: 100%; /* 이미지가 부모 요소를 넘어가지 않도록 설정 */
+  height: auto; 
   border-radius: 10px;
-  align-items: right;
-  align-content: right;
 }
+
 .first-section .first-right-side {
-  float: right;
-  width: 60%;
+  flex: 1 1 300px; /* 최소 너비 300px 설정 */
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 텍스트를 중앙 정렬 */
 }
 .section {
   text-align: center;
@@ -87,13 +98,8 @@ body{
 .section .content .text {
   text-align: justify;
 }
-.content-left, .content-right {
-  float: right;
-  width: 50%;
-  margin-right: 20px;
-}
 .section .content .table {
-  text-align: left;
+  text-align: center;
   margin: 0 auto;
 }
 .right-side {
@@ -214,19 +220,63 @@ body{
 .footer p {
   margin: 5px 0;
 }
-
+#contact {
+  background-color: var(--color-dark-purple);
+  padding: 40px;
+}
 .contact {
   margin: 32px 0;
   color: var(--color-white);
+  text-align: center;
 }
+
 .contact__links {
   font-size: var(--font-large);
   margin: 24px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
+
+.contact__links a {
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+.contact__links i {
+  font-size: 3rem; /* Increase icon size */
+  transition: transform var(--animation-duration) ease-in-out, color var(--animation-duration) ease-in-out;
+}
+
 .contact__links i:hover {
   transform: scale(1.1);
   color: var(--color-yellow);
-  transition: all var(--animation-duration) ease in;
+}
+
+.contact .content .text {
+  margin: 16px 0; /* Add margin to separate the lines */
+  color: var(--color-white);
+  text-align: center; /* Ensure text is centered */
+}
+.sub {
+  margin: 16px 0; /* Add margin to separate the lines */
+  color: var(--color-white);
+  text-align: center; /* Ensure text is centered */
+}
+
+.custom-icon {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  background-size: cover;
+}
+
+.custom-icon-notion {
+  background-image: url('https://example.com/path/to/notion-icon.svg');
+}
+
+.custom-icon-tistory {
+  background-image: url('https://example.com/path/to/tistory-icon.svg');
 }
 ul {
   list-style-type: none;
