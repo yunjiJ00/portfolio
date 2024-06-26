@@ -27,3 +27,32 @@ document.addEventListener("DOMContentLoaded", function() {
   };
   methods.init();
 });
+document.addEventListener("DOMContentLoaded", function() {
+  const projects = document.querySelectorAll('.project');
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const link = entry.target.querySelector('a.more-btn').href;
+        prefetchLink(link);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  projects.forEach(project => {
+    observer.observe(project);
+  });
+
+  function prefetchLink(url) {
+    const link = document.createElement('link');
+    link.rel = 'prefetch';
+    link.href = url;
+    document.head.appendChild(link);
+  }
+});
