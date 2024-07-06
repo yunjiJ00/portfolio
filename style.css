@@ -67,7 +67,7 @@ body {
 }
 
 .first-section .first-left-side {
-  flex: 1 1 300px; /* 최소 너비 300px 설정 */
+  flex: 1 1 200px; /* 최소 너비 300px 설정 */
   display: flex;
   justify-content: right;
 }
