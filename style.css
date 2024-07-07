@@ -56,7 +56,7 @@ body {
   padding-top: 150px;
   padding-left: 5%;
   padding-right: 5%;
-  padding-bottom: 5%;
+  padding-bottom: 20px;
 }
 
 .first-section .content {
@@ -67,9 +67,10 @@ body {
 }
 
 .first-section .first-left-side {
-  flex: 1 1 200px; /* 최소 너비 300px 설정 */
+  flex: 1 1 200px; /* 최소 너비 200px 설정 */
   display: flex;
-  justify-content: right;
+  justify-content: flex-end; /* 우측 정렬 */
+  align-items: center; /* 세로 중앙 정렬 추가 */
 }
 
 .first-section .first-left-side img {
@@ -79,7 +80,7 @@ body {
 }
 
 .first-section .first-right-side {
-  flex: 1 1 600px; /* 최소 너비 300px 설정 */
+  flex: 1 1 600px; /* 최소 너비 600px 설정 */
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -324,6 +325,9 @@ li {
     width: 100%; /* 모바일에서 전체 너비 사용 */
     text-align: center; /* 텍스트 중앙 정렬 */
     justify-content: center; /* 요소 중앙 정렬 */
+  }
+  .first-right-side{
+    width: 70%;
   }
 
   .first-section .first-left-side img {
